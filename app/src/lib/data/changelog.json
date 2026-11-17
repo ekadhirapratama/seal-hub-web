@@ -1,0 +1,17 @@
+[
+	{
+		"version": "0.2.0",
+		"date": "2026-11-17",
+		"title": "Halaman utama",
+		"kind": "fitur",
+		"changes": [
+			"Tampilan awal aplikasi dengan tautan ke semua fitur",
+			"Menu navigasi di ponsel dan desktop"
+		]
+	},
+	{
+		"version": "0.1.0",
+		"date": "2026-11-16",
+		"changes": ["Proyek dimulai"]
+	}
+]

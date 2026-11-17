@@ -378,6 +378,7 @@ Material names are plain strings. There is no shared item catalogue: no feature 
 | `version` | string | Semver. Entry 0 is the version shown in the app. |
 | `date` | string | `YYYY-MM-DD`. |
 | `title` | string, optional | |
+| `kind` | string, optional | Optional entry kind tag per features §3.1. |
 | `changes` | `string[]`, min 1 | Plain text lines. |
 
 ```json
