@@ -652,7 +652,7 @@ Method: the `ui-ux-pro-max` skill was queried for this product type. Its generat
 
 | Area | Kept |
 |---|---|
-| Colour base | `--bg #fbf3e4`, `--card #fffbf2`, `--ink #1b2a4a`, `--ink-soft #4d5a77`, `--line #d9cdb4`, `--coral #ff8a73` / `--coral-strong #f4705a`, `--green #2e7d4f` / `--green-soft #dff1e5`, `--warn-soft #fff0c9`, `--danger #9b2c1b`, pastel pink and blue |
+| Colour base | `--bg #fbf3e4`, `--card #fffbf2`, `--ink #1b2a4a`, `--ink-soft #4d5a77`, `--line #d9cdb4`, `--coral #ff8a73` / `--coral-strong #f4705a`, `--green #276b43` / `--green-soft #dff1e5`, `--warn-soft #fff0c9`, `--danger #9b2c1b`, pastel pink and blue |
 | Background | Fixed pastel radial gradients over cream |
 | Type | Space Grotesk (headings), DM Sans (body), self-hosted woff2, `font-display: swap`; scale h1 1.75 / h2 1.25 / body 1rem, line-height 1.5 |
 | Shape | 16px card radius, 14px buttons, 12px inputs, 999px pills; 2px ink borders on interactive elements, 1.5px `--line` on surfaces |
