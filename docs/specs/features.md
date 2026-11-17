@@ -646,23 +646,23 @@ Method: the `ui-ux-pro-max` skill was queried for this product type. Its generat
 
 ### 5.1 Identity
 
-"A friendly adventurer's notebook": cream paper, ink outlines, chunky pressed buttons, soft pastel blobs. It suits Seal Online's cute cel-shaded tone better than the dark-and-gold look of most MMORPG tools, and it stays readable beside a bright game window.
+"A friendly adventurer's notebook", neobrutalist: nude paper, thick ink outlines, hard offset shadows, chunky pressed buttons, flat fills. Reference: `Landing/templates/layout-3`. It suits Seal Online's cute cel-shaded tone better than the dark-and-gold look of most MMORPG tools, and it stays readable beside a bright game window.
 
-### 5.2 Kept from the reference, unchanged
+### 5.2 Kept from the reference (colour, surface and depth rows revised)
 
 | Area | Kept |
 |---|---|
-| Colour base | `--bg #fbf3e4`, `--card #fffbf2`, `--ink #1b2a4a`, `--ink-soft #4d5a77`, `--line #d9cdb4`, `--coral #ff8a73` / `--coral-strong #f4705a`, `--green #276b43` / `--green-soft #dff1e5`, `--warn-soft #fff0c9`, `--danger #9b2c1b`, pastel pink and blue |
-| Background | Fixed pastel radial gradients over cream |
+| Colour base | `--bg #f3e9dc`, `--card #fffaf2`, `--ink #1b2a4a`, `--ink-soft #4d5a77`, `--line #d9cdb4`, `--coral #ff8a73` / `--coral-strong #f4705a`, `--green #276b43` / `--green-soft #dff1e5`, `--warn-soft #fff0c9`, `--danger #9b2c1b`, pastel pink (blush `#f2d4c9`) and blue; nude additions `--tan #e3c9a8`, `--clay #d99a7c`, `--sage #cfd8bd` (ink text on each: 8.93, 6.00, 9.62) |
+| Background | Flat `--bg`, no gradient |
 | Type | Space Grotesk (headings), DM Sans (body), self-hosted woff2, `font-display: swap`; scale h1 1.75 / h2 1.25 / body 1rem, line-height 1.5 |
-| Shape | 16px card radius, 14px buttons, 12px inputs, 999px pills; 2px ink borders on interactive elements, 1.5px `--line` on surfaces |
-| Depth | Soft card shadow; pressed-button effect (`0 3px 0 ink`, translateY on active) |
+| Shape | 8px radius (`--radius`) on cards and buttons, 12px inputs, 999px pills; 3px ink borders on cards and buttons |
+| Depth | Hard offset shadow `4px 4px 0 var(--ink)`, no blur; hover and keyboard focus shift the element 2px, press shifts 4px with no shadow |
 | Components | card, button set, tag/pill, progress bar, empty state, banner/alert, segmented filter, inputs, native `<dialog>`, sticky topbar |
-| Accessibility base | skip link, 3px ink `:focus-visible` outline, `.sr-only`, reduced-motion block |
+| Accessibility base | skip link, 3px ink `:focus-visible` outline (`a.card` uses an 8px offset to clear the hard shadow), `.sr-only`, reduced-motion block |
 
 ### 5.3 Adapted for a fantasy MMORPG companion
 
-**Accent colours** (new primitives; values are proposals, contrast to be measured at build time):
+**Accent colours** (new primitives; contrast is measured by `app/src/lib/contrast.test.ts`, which reads `app.css`, so a token edit that breaks a pair fails `npm test`):
 
 | Token | Value | Semantic use |
 |---|---|---|
@@ -675,10 +675,10 @@ Semantic layer (what components actually reference):
 
 | Semantic token | Maps to | Used by |
 |---|---|---|
-| `--accent-fame` / `--accent-fame-soft` | gold / gold-soft | Fame calculator, fame figures everywhere |
+| `--accent-fame` / `--accent-fame-soft` | gold / gold-soft | Fame calculator, fame figures everywhere. Feature-card top strip uses the non-soft accents |
 | `--accent-quest` / `--accent-quest-soft` | coral / pastel-pink | Quest cards, source pills |
 | `--accent-pet` / `--accent-pet-soft` | violet / violet-soft | Pet cards, tree highlights |
-| `--accent-character-soft` | pastel-blue | Character cards, selected states |
+| `--accent-character` / `--accent-character-soft` | clay / tan | Character cards, selected states |
 | `--state-done` | green | Titles already reached, positive status |
 
 One accent per feature gives each tab its own colour identity without adding a second primary: coral stays the only primary-action colour. Text on coral and gold fills is always `--ink` (white on coral fails contrast).

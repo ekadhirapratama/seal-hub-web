@@ -38,7 +38,7 @@ Verification notes:
 
 ### CSS port (reference → SvelteKit)
 
-1. Copy the `:root` token block from `grocery-pwa/app/styles/style.css` into `src/app.css` unchanged (colors, `--font-head`, `--font-body`, `--radius`, `--shadow`).
+1. Copy the `:root` token block from `grocery-pwa/app/styles/style.css` into `src/app.css` as a starting point, then restyle colours, `--radius` and `--shadow` per features.md §5.2 (neobrutalist, nude palette); `--font-head` and `--font-body` stay as copied.
 2. Copy the `@font-face` blocks, the `body` gradient rule, the heading scale, and the accessibility block (skip link, `:focus-visible`, `.sr-only`, reduced-motion) into the same file.
 3. Copy style-only classes as global classes (`.btn`, `.card`, `.tag`, `.status`, `.stack`, `.row`, `.empty`, `.banner`, form inputs). Rename the Indonesian class names to English while copying (`.cek` → `.check`, `.pilih-tipe` → `.radio-cards`, `.aksi-fixed` → `.action-bar`, `.lebar` → `.wide`).
 4. Anything with behavior or fixed markup becomes a Svelte component with scoped styles (section 6).
