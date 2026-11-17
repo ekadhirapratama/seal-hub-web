@@ -33,9 +33,9 @@
 		justify-items: start;
 		gap: 16px;
 		padding: 24px 20px;
-		border: 1.5px solid var(--line);
+		border: 3px solid var(--ink);
 		border-radius: var(--radius);
-		background: linear-gradient(135deg, var(--gold-soft), var(--pastel-pink));
+		background: var(--gold-soft);
 		box-shadow: var(--shadow);
 	}
 	.hero h1 {
