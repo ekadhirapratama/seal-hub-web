@@ -9,17 +9,17 @@ Status: draft
 
 | ID | Task | Status | Depends | Notes |
 |----|------|--------|---------|-------|
-| T0 | Local `git init`, root `.gitignore`, sanitize local paths in docs, first commit directly on `main` | `[ ]` | - | Owner exception for this one commit only |
-| T1 | Scaffold SvelteKit in `app/` with the M0 commands (minimal + TS, eslint, prettier, vitest unit, adapter-static, paraglide `id`, valibot) | `[ ]` | T0 | Commands proven in trial; `app/` must be empty |
-| T2 | Make the scaffold green: single-locale Paraglide, full prerender, script fixes, remove scaffold leftovers | `[ ]` | T1 | Untouched scaffold fails `check`, `build`, second `lint`; T1+T2 ship as one PR |
-| T3 | Port the visual base: tokens, fonts, base + accessibility rules, global classes needed by shell and landing | `[ ]` | T2 | Port only what T4/T6 use |
-| T4 | App shell: mobile header + drawer, desktop sidebar, 5 nav links, placeholder page per route, all labels from messages | `[ ]` | T3 | Drawer a11y is the main risk |
-| T5 | Data-layer slice for `changelog` only: schema, sample JSON, typed export, shape test | `[ ]` | T2 | Parallel with T3/T4 |
-| T6 | Landing page per features §3.1: welcome, character CTA, 4 feature cards, updates list | `[ ]` | T4, T5 | Character count deferred (see Decisions) |
-| T7 | Verify: acceptance list below, 360px and 375×667 checks, keyboard pass, build output listing | `[ ]` | T6, T8, T9, T10 | |
-| T8 | Write `CLAUDE.md` (rules for agents) | `[ ]` | T2 | Commands must come from the real scaffold, not the specs |
-| T9 | Write `CONTRIBUTING.md` (rules for contributors) | `[ ]` | T2 | Repo will be public |
-| T10 | Write `README.md` (short project overview) | `[ ]` | T2 | Overview only; rules live in `CLAUDE.md` / `CONTRIBUTING.md` |
+| T0 | Local `git init`, root `.gitignore`, sanitize local paths in docs, first commit directly on `main` | `[x]` | - | Owner exception for this one commit only |
+| T1 | Scaffold SvelteKit in `app/` with the M0 commands (minimal + TS, eslint, prettier, vitest unit, adapter-static, paraglide `id`, valibot) | `[x]` | T0 | Commands proven in trial; `app/` must be empty |
+| T2 | Make the scaffold green: single-locale Paraglide, full prerender, script fixes, remove scaffold leftovers | `[x]` | T1 | Untouched scaffold fails `check`, `build`, second `lint`; T1+T2 ship as one PR |
+| T3 | Port the visual base: tokens, fonts, base + accessibility rules, global classes needed by shell and landing | `[x]` | T2 | Port only what T4/T6 use |
+| T4 | App shell: mobile header + drawer, desktop sidebar, 5 nav links, placeholder page per route, all labels from messages | `[x]` | T3 | Drawer a11y is the main risk |
+| T5 | Data-layer slice for `changelog` only: schema, sample JSON, typed export, shape test | `[x]` | T2 | Parallel with T3/T4 |
+| T6 | Landing page per features §3.1: welcome, character CTA, 4 feature cards, updates list | `[x]` | T4, T5 | Character count deferred (see Decisions) |
+| T7 | Verify: acceptance list below, 360px and 375×667 checks, keyboard pass, build output listing | `[x]` | T6, T8, T9, T10 | |
+| T8 | Write `CLAUDE.md` (rules for agents) | `[x]` | T2 | Commands must come from the real scaffold, not the specs |
+| T9 | Write `CONTRIBUTING.md` (rules for contributors) | `[x]` | T2 | Repo will be public |
+| T10 | Write `README.md` (short project overview) | `[x]` | T2 | Overview only; rules live in `CLAUDE.md` / `CONTRIBUTING.md` |
 
 ## Acceptance
 
