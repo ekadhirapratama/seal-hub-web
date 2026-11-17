@@ -12,5 +12,16 @@
 	"menu_open": "Buka menu",
 	"menu_close": "Tutup menu",
 	"under_construction_title": "Sedang dibangun",
-	"under_construction_text": "Halaman ini belum tersedia. Segera hadir."
+	"under_construction_text": "Halaman ini belum tersedia. Segera hadir.",
+	"landing_heading": "Selamat datang, petualang",
+	"landing_description": "Rencanakan fame, quest, dan pet untuk Seal Online.",
+	"landing_cta": "Tambah karakter pertamamu",
+	"landing_card_fame": "Kalkulator fame",
+	"landing_card_quests": "Panduan quest",
+	"landing_card_pets": "Evolusi pet",
+	"landing_card_characters": "Kelola karakter",
+	"updates_heading": "Pembaruan",
+	"updates_version": "v{version}",
+	"updates_empty": "Belum ada pembaruan.",
+	"updates_more": "Tampilkan pembaruan lama"
 }
