@@ -1,5 +1,15 @@
 [
 	{
+		"version": "0.2.1",
+		"date": "2026-11-17",
+		"title": "Tampilan halaman utama",
+		"kind": "tampilan",
+		"changes": [
+			"Panel sambutan lebih berwarna dengan judul yang menyesuaikan ukuran layar",
+			"Kartu fitur punya warna aksen dan efek saat disentuh atau disorot"
+		]
+	},
+	{
 		"version": "0.2.0",
 		"date": "2026-11-17",
 		"title": "Halaman utama",
