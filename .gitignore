@@ -1,0 +1,7 @@
+initial-brief.md
+.claude/skills/
+.claude/settings.local.json
+.DS_Store
+node_modules/
+.env
+.env.*
