@@ -1,4 +1,16 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"app_name": "Seal Hub"
+	"app_name": "Seal Hub",
+	"page_title": "{page} | {app}",
+	"skip_link": "Lewati ke konten",
+	"nav_label": "Navigasi utama",
+	"nav_home": "Beranda",
+	"nav_characters": "Karakter",
+	"nav_fame": "Fame",
+	"nav_quests": "Quest",
+	"nav_pets": "Pet",
+	"menu_open": "Buka menu",
+	"menu_close": "Tutup menu",
+	"under_construction_title": "Sedang dibangun",
+	"under_construction_text": "Halaman ini belum tersedia. Segera hadir."
 }
