@@ -31,10 +31,23 @@
 <style>
 	.hero {
 		justify-items: start;
+		gap: 16px;
+		padding: 24px 20px;
+		border: 1.5px solid var(--line);
+		border-radius: var(--radius);
+		background: linear-gradient(135deg, var(--gold-soft), var(--pastel-pink));
+		box-shadow: var(--shadow);
+	}
+	.hero h1 {
+		font-size: clamp(1.75rem, 6vw, 2.5rem);
+	}
+	.hero p {
+		max-width: 40ch;
+		color: var(--ink-soft);
 	}
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 		gap: 12px;
 	}
 </style>
