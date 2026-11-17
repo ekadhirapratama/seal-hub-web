@@ -1,0 +1,275 @@
+/* Global stylesheet. Ported from the reference repo (see docs/research/styling-port-checklist.md). */
+
+@font-face {
+	font-family: 'DM Sans';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('/fonts/dm-sans-latin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	font-style: normal;
+	font-weight: 500 700;
+	font-display: swap;
+	src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
+}
+
+:root {
+	/* primitives */
+	--bg: #fbf3e4;
+	--pastel-pink: #fde1dc;
+	--pastel-blue: #dce8f7;
+	--card: #fffbf2;
+	--ink: #1b2a4a;
+	--ink-soft: #4d5a77;
+	--line: #d9cdb4;
+	--coral: #ff8a73;
+	--coral-strong: #f4705a;
+	--green: #2e7d4f;
+	--green-soft: #dff1e5;
+	--warn-soft: #fff0c9;
+	--danger: #9b2c1b;
+	--gold: #f2b33d;
+	--gold-soft: #fbe7b2;
+	--violet: #6b4fa3;
+	--violet-soft: #e6dcf5;
+
+	/* semantic (features.md §5.3) */
+	--accent-fame: var(--gold);
+	--accent-fame-soft: var(--gold-soft);
+	--accent-quest: var(--coral);
+	--accent-quest-soft: var(--pastel-pink);
+	--accent-pet: var(--violet);
+	--accent-pet-soft: var(--violet-soft);
+	--accent-character-soft: var(--pastel-blue);
+	--state-done: var(--green);
+
+	--radius: 16px;
+	--shadow: 0 2px 0 rgb(27 42 74 / 0.06), 0 6px 16px rgb(27 42 74 / 0.06);
+	--font-head: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	/* layout tokens consumed by the app shell (T4). CSS vars cannot be used in
+	   media queries: the shell switches drawer -> sidebar at min-width: 64rem. */
+	--header-height: 56px;
+	--sidebar-width: 16rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--ink);
+	background:
+		radial-gradient(circle at 0% 0%, var(--pastel-pink) 0, transparent 38%),
+		radial-gradient(circle at 100% 12%, var(--pastel-blue) 0, transparent 34%), var(--bg);
+	background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-head);
+	line-height: 1.2;
+	margin: 0;
+}
+
+h1 {
+	font-size: 1.75rem;
+}
+
+h2 {
+	font-size: 1.25rem;
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+/* accessibility */
+:focus-visible {
+	outline: 3px solid var(--ink);
+	outline-offset: 3px;
+	border-radius: 6px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	left: 12px;
+	top: -60px;
+	z-index: 10;
+	padding: 10px 14px;
+	background: var(--ink);
+	color: #fff;
+	border-radius: 10px;
+}
+
+.skip-link:focus {
+	top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+	}
+}
+
+/* layout helpers */
+.stack {
+	display: grid;
+	gap: 12px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+}
+
+.row.between {
+	justify-content: space-between;
+}
+
+.section-title {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+/* card */
+.card {
+	background: var(--card);
+	border: 1.5px solid var(--line);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 16px;
+}
+
+a.card {
+	display: grid;
+	gap: 10px;
+	text-decoration: none;
+}
+
+a.card:hover {
+	border-color: var(--ink);
+}
+
+.card-title {
+	font-family: var(--font-head);
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+/* tag */
+.tag {
+	display: inline-block;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	padding: 2px 10px;
+	border-radius: 999px;
+	border: 1.5px solid var(--ink);
+}
+
+.tag.quest {
+	background: var(--accent-quest-soft);
+}
+
+.tag.character {
+	background: var(--accent-character-soft);
+}
+
+/* empty state */
+.empty {
+	border: 2px dashed var(--line);
+	border-radius: var(--radius);
+	padding: 24px 16px;
+	display: grid;
+	gap: 12px;
+	justify-items: start;
+	background: rgb(255 251 242 / 0.6);
+}
+
+.empty p {
+	color: var(--ink-soft);
+}
+
+/* button */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 48px;
+	padding: 10px 20px;
+	font: inherit;
+	font-weight: 700;
+	color: var(--ink);
+	background: var(--card);
+	border: 2px solid var(--ink);
+	border-radius: 14px;
+	box-shadow: 0 3px 0 var(--ink);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn:active {
+	transform: translateY(2px);
+	box-shadow: 0 1px 0 var(--ink);
+}
+
+.btn.primary {
+	background: var(--coral);
+}
+
+.btn.primary:hover {
+	background: var(--coral-strong);
+}
+
+.btn.small {
+	min-height: 44px;
+	padding: 6px 14px;
+	box-shadow: none;
+}
+
+.btn.block {
+	width: 100%;
+}
+
+.btn.danger {
+	color: var(--danger);
+	border-color: var(--danger);
+}
+
+/* banner */
+.banner {
+	display: grid;
+	gap: 10px;
+	justify-items: start;
+	padding: 12px 16px;
+	border: 2px solid var(--ink);
+	border-radius: var(--radius);
+	background: var(--warn-soft);
+}
