@@ -46,6 +46,17 @@
 	--accent-character-soft: var(--pastel-blue);
 	--state-done: var(--green);
 
+	/* element tints: soft fills, always paired with --ink text */
+	--el-fire: #ffd9cf;
+	--el-steel: #dde3ea;
+	--el-wood: #d6efd9;
+	--el-earth: #ecdcc0;
+	--el-water: #d3e6fa;
+	--el-light: #fff2b8;
+	--el-darkness: #d9d0e8;
+	--el-physical: #e6e1d6;
+	--el-magical: #efd9f2;
+
 	--radius: 16px;
 	--shadow: 0 2px 0 rgb(27 42 74 / 0.06), 0 6px 16px rgb(27 42 74 / 0.06);
 	--font-head: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
