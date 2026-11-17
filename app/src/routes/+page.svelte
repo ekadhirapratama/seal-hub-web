@@ -47,7 +47,12 @@
 	}
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 12px;
+	}
+	@media (min-width: 48rem) {
+		.cards {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
 	}
 </style>
