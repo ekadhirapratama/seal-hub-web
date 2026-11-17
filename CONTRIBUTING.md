@@ -50,3 +50,10 @@ Before submitting a pull request, ensure all checks pass cleanly in this exact o
 ## Important Note on Game Data
 
 Data contributions (such as items, quests, and pets) are **not accepted** until the project reaches the data phase. Please focus on features, tooling, and documentation.
+
+## More
+
+- Project overview: [README.md](README.md)
+- Rules for coding agents: [CLAUDE.md](CLAUDE.md)
+- Product and architecture specs: [docs/specs/README.md](docs/specs/README.md)
+- License: to be decided by the maintainer.
