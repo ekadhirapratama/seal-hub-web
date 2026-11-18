@@ -9,16 +9,19 @@
 		$props();
 
 	const accents = {
-		'/fame': 'var(--accent-fame-soft)',
-		'/quests': 'var(--accent-quest-soft)',
-		'/pets': 'var(--accent-pet-soft)',
-		'/characters': 'var(--accent-character-soft)'
+		'/fame': 'var(--accent-fame)',
+		'/quests': 'var(--accent-quest)',
+		'/pets': 'var(--accent-pet)',
+		'/characters': 'var(--accent-character)'
 	};
 </script>
 
 <a class="card feature" href={resolve(href)} style:--accent={accents[href]}>
 	<span class="card-title">{title}</span>
 	<span class="text">{text}</span>
+	<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+		<path d="M5 12h14M13 6l6 6-6 6" />
+	</svg>
 </a>
 
 <style>
@@ -27,11 +30,18 @@
 		align-content: start;
 		border-top: 8px solid var(--accent);
 		transition:
-			transform 200ms ease,
-			border-color 200ms ease;
+			transform 150ms ease,
+			box-shadow 150ms ease;
 	}
-	.feature:hover {
-		transform: translateY(-2px);
+	.arrow {
+		justify-self: end;
+		width: 24px;
+		height: 24px;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
 	}
 	.text {
 		color: var(--ink-soft);
