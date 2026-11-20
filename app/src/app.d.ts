@@ -5,7 +5,10 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			// Set when the character form was opened by in-app navigation, so closing can go back.
+			formOpen?: boolean;
+		}
 		// interface Platform {}
 	}
 }

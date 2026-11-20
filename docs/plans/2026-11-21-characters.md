@@ -12,9 +12,9 @@ Status: active
 | T1 | `jobs` data slice: schema, sample JSON (tier 1: Beginner, Warrior, Knight, Mage; tier 2: Swordmaster, Fire Wizzard, Vagabond), data-index export, shape test | `[x]` | - | Only `jobs`; owner completes the list later; names/tiers unverified, spelling as given |
 | T2 | User-data layer per arch §5: `Character` schema (`MAX_LEVEL` 251), storage module (read-only mode, versioning, corrupt data, `storage` event), add/update/delete + unit tests | `[x]` | - | Update on a missing id must not write; stale `activeCharacterId` ignored |
 | T3 | Safe `return` target check + tests | `[x]` | - | Single leading `/` only |
-| T4 | `/characters` list, empty state, banners (read-only, jobs unavailable), Unknown job | `[ ]` | T1, T2 | All strings in `messages/id.json` |
-| T5 | Add/edit `<dialog>` form: field validation, `?form=` URL sync, `return` redirect, stale-edit error | `[ ]` | T3, T4 | Query read only after hydration; focus trap/restore is the main risk |
-| T6 | Delete confirm dialog | `[ ]` | T4 | |
+| T4 | `/characters` list, empty state, banners (read-only, jobs unavailable), Unknown job | `[x]` | T1, T2 | All strings in `messages/id.json` |
+| T5 | Add/edit `<dialog>` form: field validation, `?form=` URL sync, `return` redirect, stale-edit error | `[x]` | T3, T4 | Query read only after hydration; focus trap/restore is the main risk |
+| T6 | Delete confirm dialog | `[x]` | T4 | |
 | T7 | Verify: acceptance below, 375px check, keyboard pass | `[ ]` | T5, T6 | |
 
 ## Acceptance
