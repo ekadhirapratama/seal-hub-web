@@ -137,7 +137,7 @@
 
 			<ul class="stack list" aria-label={m.characters_list_label()}>
 				{#each store.characters as c (c.id)}
-					<li class="card character">
+					<li class="card char-card">
 						<div class="row between head">
 							<h2 class="card-title">{c.name}</h2>
 							<span class="tag character" class:warn={!knownJob(c.job)}>{jobName(c.job)}</span>
@@ -206,13 +206,13 @@
 		padding: 0;
 		gap: 12px;
 	}
-	.character {
+	.char-card {
 		display: grid;
 		gap: 8px;
 		padding: 12px 16px;
 	}
-	.character p,
-	.character h2 {
+	.char-card p,
+	.char-card h2 {
 		margin: 0;
 	}
 	.head {
