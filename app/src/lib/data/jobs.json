@@ -1,0 +1,9 @@
+[
+	{ "id": "beginner", "name": "Beginner", "tier": 1 },
+	{ "id": "warrior", "name": "Warrior", "tier": 1 },
+	{ "id": "knight", "name": "Knight", "tier": 1 },
+	{ "id": "mage", "name": "Mage", "tier": 1 },
+	{ "id": "vagabond", "name": "Vagabond", "tier": 2, "parentId": "beginner" },
+	{ "id": "swordmaster", "name": "Swordmaster", "tier": 2, "parentId": "warrior" },
+	{ "id": "fire-wizzard", "name": "Fire Wizzard", "tier": 2, "parentId": "mage" }
+]

@@ -4,9 +4,16 @@
 	let {
 		href,
 		title,
-		text
-	}: { href: '/fame' | '/quests' | '/pets' | '/characters'; title: string; text: string } =
-		$props();
+		text,
+		status,
+		featured = false
+	}: {
+		href: '/fame' | '/quests' | '/pets' | '/characters';
+		title: string;
+		text: string;
+		status?: string;
+		featured?: boolean;
+	} = $props();
 
 	const accents = {
 		'/fame': 'var(--accent-fame)',
@@ -16,8 +23,11 @@
 	};
 </script>
 
-<a class="card feature" href={resolve(href)} style:--accent={accents[href]}>
-	<span class="card-title">{title}</span>
+<a class="card feature" class:featured href={resolve(href)} style:--accent={accents[href]}>
+	<span class="head">
+		<span class="card-title">{title}</span>
+		{#if status}<span class="tag">{status}</span>{/if}
+	</span>
 	<span class="text">{text}</span>
 	<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
 		<path d="M5 12h14M13 6l6 6-6 6" />
@@ -32,6 +42,16 @@
 		transition:
 			transform 150ms ease,
 			box-shadow 150ms ease;
+	}
+	.featured {
+		background: var(--accent-character-soft);
+	}
+	.head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 6px;
 	}
 	.arrow {
 		justify-self: end;

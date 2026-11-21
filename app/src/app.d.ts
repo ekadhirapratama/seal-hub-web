@@ -5,7 +5,10 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			// Character form target ('new' or an id) when opened by in-app navigation; closing goes back.
+			form?: string;
+		}
 		// interface Platform {}
 	}
 }
