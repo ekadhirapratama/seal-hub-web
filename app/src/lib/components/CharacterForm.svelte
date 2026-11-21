@@ -75,7 +75,12 @@
 		event.preventDefault();
 		submitted = true;
 		const result = check();
-		if (!result.ok) return;
+		if (!result.ok) {
+			// Send keyboard and screen-reader users to the first field that needs fixing.
+			const first = (['name', 'job', 'level', 'fame'] as const).find((k) => result.errors[k]);
+			if (first) document.getElementById(`f-${first}`)?.focus();
+			return;
+		}
 		const saved = onsave(result.value, editingId);
 		if (!saved.ok) alert = failure[saved.reason]();
 	}
@@ -191,8 +196,12 @@
 		border-color: var(--danger);
 	}
 	.hint.error {
+		margin: 0;
 		color: var(--danger);
 		font-size: 0.875rem;
+	}
+	h2 {
+		margin: 0;
 	}
 	.actions {
 		justify-content: flex-end;

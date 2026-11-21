@@ -6,8 +6,8 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		interface PageState {
-			// Set when the character form was opened by in-app navigation, so closing can go back.
-			formOpen?: boolean;
+			// Character form target ('new' or an id) when opened by in-app navigation; closing goes back.
+			form?: string;
 		}
 		// interface Platform {}
 	}

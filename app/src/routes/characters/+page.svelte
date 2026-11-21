@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, untrack } from 'svelte';
 	import { browser } from '$app/env';
-	import { goto, pushState, replaceState } from '$app/navigation';
+	import { goto, pushState } from '$app/navigation';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { m } from '#lib/paraglide/messages.js';
@@ -17,8 +17,11 @@
 	let deleteError = $state('');
 	let leaving = false;
 
+	// pushState leaves page.url untouched, so in-app opens live in page.state; deep links use the query.
 	// The query is only read in the browser: prerender has no search params.
-	const formParam = $derived(browser ? page.url.searchParams.get('form') : null);
+	const formParam = $derived(
+		browser ? (page.state.form ?? page.url.searchParams.get('form')) : null
+	);
 
 	onMount(() => store.init());
 
@@ -37,12 +40,12 @@
 
 	function openForm(target: string) {
 		// eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() plus a query string
-		pushState(`${resolve('/characters')}?form=${target}`, { formOpen: true });
+		pushState(`${resolve('/characters')}?form=${target}`, { form: target });
 	}
 
 	function closeForm() {
-		if (page.state.formOpen) history.back();
-		else replaceState(resolve('/characters'), {});
+		if (page.state.form) history.back();
+		else goto(resolve('/characters'), { replaceState: true });
 	}
 
 	// Escape, Cancel and the Save path all end up here once the dialog has closed.
@@ -194,6 +197,7 @@
 		padding: 0;
 	}
 	.card-title {
+		margin: 0;
 		overflow-wrap: anywhere;
 	}
 	dialog {
