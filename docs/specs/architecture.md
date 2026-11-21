@@ -582,7 +582,7 @@ Done-check: `npm run build && npm run preview`, then offline mode still loads al
 
 | ID | Milestone | Blocked on |
 |---|---|---|
-| M8 | Remote repo (local git is initialised earlier, see `docs/plans/2026-11-17-setup-and-landing.md` T0), CI (`check`, `lint`, `test`, `build`), deploy | Q2 (host decides base path, `trailingSlash`, 404 page) |
+| M8 | Remote repo (local git is initialised earlier, see the setup plan, task T0), CI (`check`, `lint`, `test`, `build`), deploy | Q2 (host decides base path, `trailingSlash`, 404 page) |
 | M9 | Real data collection replacing samples | Q9, Q10; wiki URLs in `data-source.md` re-verified one by one |
 
 ---
