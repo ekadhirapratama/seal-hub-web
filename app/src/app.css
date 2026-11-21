@@ -285,6 +285,14 @@ a.card:active {
 	width: 100%;
 }
 
+.btn:disabled {
+	color: var(--ink-soft);
+	background: var(--bg);
+	border-color: var(--ink-soft);
+	box-shadow: none;
+	cursor: not-allowed;
+}
+
 .btn.danger {
 	color: var(--danger);
 	border-color: var(--danger);

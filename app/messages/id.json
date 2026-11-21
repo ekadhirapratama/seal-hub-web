@@ -75,12 +75,16 @@
 	"err_write_failed": "Gagal menyimpan. Data tidak berubah.",
 	"err_not_found": "Karakter sudah tidak ada.",
 	"err_readonly": "Penyimpanan hanya bisa dibaca.",
-	"banner_unreadable": "Data tersimpan tidak bisa dibaca, jadi halaman ini hanya mode baca. Data lama dicadangkan sebelum dihapus.",
+	"banner_unreadable": "Data tersimpan tidak bisa dibaca, jadi hanya mode baca.",
 	"banner_unreadable_reset": "Mulai dari awal",
 	"banner_unavailable": "Penyimpanan browser tidak tersedia, jadi halaman ini hanya mode baca.",
 	"banner_jobs_unavailable": "Daftar job tidak tersedia. Karakter belum bisa disimpan.",
 	"delete_title": "Hapus karakter?",
 	"delete_text": "{name} akan dihapus permanen.",
 	"delete_confirm": "Hapus",
-	"delete_cancel": "Batal"
+	"delete_cancel": "Batal",
+	"landing_characters_count": "Kamu punya {count} karakter",
+	"landing_characters_manage": "Kelola",
+	"status_soon": "Segera",
+	"banner_unreadable_note": "Data lama dicadangkan dulu sebelum dihapus."
 }

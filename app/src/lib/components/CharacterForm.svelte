@@ -15,6 +15,7 @@
 		onclose: () => void;
 	} = $props();
 
+	const number = new Intl.NumberFormat('id-ID');
 	let dialog: HTMLDialogElement;
 	let editingId: string | null = $state(null);
 	let values = $state({ name: '', job: '', level: '', fame: '' });
@@ -45,7 +46,7 @@
 			name: character?.name ?? '',
 			job: character && jobIds.includes(character.job) ? character.job : '',
 			level: character ? String(character.level) : '',
-			fame: character ? String(character.fame) : ''
+			fame: character ? number.format(character.fame) : ''
 		};
 		errors = {};
 		submitted = false;
@@ -205,9 +206,5 @@
 	}
 	.actions {
 		justify-content: flex-end;
-	}
-	button:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
 	}
 </style>
