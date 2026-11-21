@@ -5,3 +5,4 @@ initial-brief.md
 node_modules/
 .env
 .env.*
+docs/plans/

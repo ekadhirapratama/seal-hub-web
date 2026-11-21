@@ -10,7 +10,7 @@ Seal Hub: unofficial fan tool for Seal Online. Static, prerendered SvelteKit 5 s
   - `app/messages/id.json` — all UI strings (Paraglide).
   - `app/static/` — static assets (fonts, robots.txt).
 - `docs/specs/` — binding product and architecture specs.
-- `docs/plans/` — dated task plans; the plan names your task and its acceptance.
+- `docs/plans/` — local-only task plans, gitignored and never pushed. Scope and decisions live in the GitHub issue or PR.
 - `docs/research/` — reference notes; read-only.
 
 ## Commands
@@ -43,11 +43,11 @@ Before declaring done, run `check`, `lint`, `test`, `build` in that order; all e
 - Work on a branch: `feat/<topic>` for features, `fix/<topic>` for bugfixes. Open a PR.
 - `main` receives changes through PRs only.
 - Commit short imperative messages.
-- Stage tracked, intended files only; ignored files (`node_modules/`, `.svelte-kit/`, `build/`, `.env*`, `.claude/skills/`, `initial-brief.md`) stay out.
+- Stage tracked, intended files only; ignored files (`node_modules/`, `.svelte-kit/`, `build/`, `.env*`, `.claude/skills/`, `docs/plans/`, `initial-brief.md`) stay out.
 
 ## Boundaries
 
-- Install packages only when the plan lists them.
+- Install packages only when the issue or PR lists them.
 - Leave `initial-brief.md`, `skills-lock.json`, `.claude/skills/`, and `docs/research/` untouched.
 - Skip installers that write agent directories (`npx skills` and similar).
 - Keep personal data and local absolute paths out of tracked files.
